@@ -1,0 +1,46 @@
+
+
+
+
+
+spring-intergation
+
+
+1. message
+2. channel
+    消息管道，生产者生产消息推送到 channel，消费者从channel消费消息。因此通道是将消息传递组件解耦，并且还提供
+了一个方便的消息拦截和监视点。
+
+1） publishSubscribeChannel : 把消息主动推送到所有订阅者，每个订阅者能都收到相同的消息
+2） queueChannel： 点对点的概念，只有一个消费者可以接受发送到该通道的消息，达到容量就阻塞
+3） priorityChannel: 类似queueChannel，不过有优先概念
+4） rendezvousChannel ： 支持 direct-handoff ，发送方一直阻塞，知道另一方调用通道receive，或者接受方阻塞
+直到发送方发送消息。
+5） Directchannel ： 也是 点对点的概
+6） ExecutorChannel ： 点对点
+7） fluxMessageChannel ： 
+8） Scopedchannel ： scope 属性
+
+3. endpoint
+消息中断，消息处理的真正节点，接受channel发送的消息，处理完发送到对应的channel
+
+4. message Transformer
+    消息转换器 负责转换消息的内容或结构，并返回修改后的消息。
+
+5. message filter
+    消息筛选  过滤
+
+6. message router
+    消息路由器，根据payload的内容或者heaher的配置，发送到不同的接受channel
+
+7。 splitter
+    拆分其把来自channel 的消息 拆分为多个消息
+8. Aggregator
+    聚合器，多条消息合并成一条
+
+9. Service activator
+    服务激活器，是将服务实力连接到消息传递系统的通用断点。
+
+10。 channel adaptor
+    适配器，把不同的数据源
+
